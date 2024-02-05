@@ -9,7 +9,7 @@ ExamplePage {
     Material.theme: Material.Light
     Material.accent: Material.Indigo
 
-    title: qsTr("Proxy layouts examples")
+    title: qsTr("Buttons - try shrinking the window!")
 
     ColumnLayout {
         id: column

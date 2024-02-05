@@ -18,6 +18,7 @@ set(QML_FILES
     MenuPage.qml
     PageHeader.qml
     ExamplePage.qml
+    NavigationBarExample.qml
 )
 
 qt_add_qml_module(appProxyLayouts

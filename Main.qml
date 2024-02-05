@@ -3,8 +3,8 @@ import QtQuick.Controls
 
 Window {
     id: root
-    width: 640
-    height: 480
+    width: 800
+    height: 640
     visible: true
     title: qsTr("Hello World")
 
