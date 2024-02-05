@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(ProxyLayouts VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 6.6 REQUIRED COMPONENTS Quick)
+
+qt_standard_project_setup(REQUIRES 6.6)
+
+qt_add_executable(appProxyLayouts
+    main.cpp
+)
+
+set(QML_FILES
+    Main.qml
+    ButtonExample.qml
+    MenuPage.qml
+    PageHeader.qml
+    ExamplePage.qml
+)
+
+qt_add_qml_module(appProxyLayouts
+    URI ProxyLayouts
+    VERSION 1.0
+    QML_FILES ${QML_FILES}
+)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+set_target_properties(appProxyLayouts PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appProxyLayouts
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+target_link_libraries(appProxyLayouts
+    PRIVATE Qt6::Quick
+)
+
+include(GNUInstallDirs)
+install(TARGETS appProxyLayouts
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
