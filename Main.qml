@@ -6,7 +6,7 @@ Window {
     width: 800
     height: 640
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("QML Proxy Layouts examples")
 
     StackView {
         id: mainStack
@@ -22,6 +22,18 @@ Window {
                 case MenuPage.ButtonExample:
                     mainStack.push(buttonExampleComponent)
                     break
+                case MenuPage.NavigationExample:
+                    mainStack.push(navigationExampleComponent)
+                    break
+                case MenuPage.DynamicCreationExample:
+                    mainStack.push(dynamicCreationExampleComponent)
+                    break
+                case MenuPage.RtlExample:
+                    mainStack.push(rtlExampleComponent)
+                    break
+                case MenuPage.DualLayoutAntiExample:
+                    mainStack.push(dualLayoutAntiExampleComponent)
+                    break
                 }
             }
         }
@@ -31,6 +43,46 @@ Window {
         id: buttonExampleComponent
 
         ButtonExample {
+            onBackButtonPressed: {
+                mainStack.pop()
+            }
+        }
+    }
+
+    Component {
+        id: navigationExampleComponent
+
+        NavigationBarExample {
+            onBackButtonPressed: {
+                mainStack.pop()
+            }
+        }
+    }
+
+    Component {
+        id: dynamicCreationExampleComponent
+
+        DynamicCreationExample {
+            onBackButtonPressed: {
+                mainStack.pop()
+            }
+        }
+    }
+
+    Component {
+        id: rtlExampleComponent
+
+        RtlSupportExample {
+            onBackButtonPressed: {
+                mainStack.pop()
+            }
+        }
+    }
+
+    Component {
+        id: dualLayoutAntiExampleComponent
+
+        DualLayoutExample {
             onBackButtonPressed: {
                 mainStack.pop()
             }

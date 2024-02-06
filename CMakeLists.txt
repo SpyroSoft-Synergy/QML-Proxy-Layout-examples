@@ -19,12 +19,29 @@ set(QML_FILES
     PageHeader.qml
     ExamplePage.qml
     NavigationBarExample.qml
+    DualLayoutExample.qml
+    DynamicCreationExample.qml
+    RtlSupportExample.qml
 )
 
 qt_add_qml_module(appProxyLayouts
     URI ProxyLayouts
     VERSION 1.0
     QML_FILES ${QML_FILES}
+)
+
+set(ASSETS
+    assets/sky1.jpg
+    assets/sky2.jpg
+    assets/sky3.jpg
+    assets/sky4.jpg
+    assets/sky5.jpg
+    assets/sky6.jpg
+)
+
+qt_add_resources(appProxyLayouts "images"
+    PREFIX "/"
+    FILES ${ASSETS}
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

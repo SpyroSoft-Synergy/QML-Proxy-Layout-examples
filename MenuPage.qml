@@ -16,7 +16,10 @@ ExamplePage {
 
     enum Pages {
         ButtonExample,
-        NavigationExample
+        NavigationExample,
+        DynamicCreationExample,
+        RtlExample,
+        DualLayoutAntiExample
     }
 
     ListView {
@@ -34,17 +37,35 @@ ExamplePage {
         model: ListModel {
             ListElement {
                 text: qsTr("Button example")
+                isAntiExample: false
                 type: MenuPage.ButtonExample
             }
             ListElement {
                 text: qsTr("Navigation example")
+                isAntiExample: false
                 type: MenuPage.NavigationExample
+            }
+            ListElement {
+                text: qsTr("Dynamic creation example")
+                isAntiExample: false
+                type: MenuPage.DynamicCreationExample
+            }
+            ListElement {
+                text: qsTr("RTL language support example")
+                isAntiExample: false
+                type: MenuPage.RtlExample
+            }
+            ListElement {
+                text: qsTr("ANTI EXAMPLE - Dual layout")
+                isAntiExample: true
+                type: MenuPage.DualLayoutAntiExample
             }
         }
 
         delegate: Button {
             width: ListView.view.width
             text: model.text
+            highlighted: !model.isAntiExample
 
             onClicked: {
                 root.exampleRequested(model.type)
