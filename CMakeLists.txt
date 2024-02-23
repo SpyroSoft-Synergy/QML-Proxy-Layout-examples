@@ -14,14 +14,18 @@ qt_add_executable(appProxyLayouts
 
 set(QML_FILES
     Main.qml
-    ButtonExample.qml
-    MenuPage.qml
-    PageHeader.qml
-    ExamplePage.qml
-    NavigationBarExample.qml
-    DualLayoutExample.qml
-    DynamicCreationExample.qml
-    RtlSupportExample.qml
+    controls/MenuPage.qml
+    controls/PageHeader.qml
+    controls/ExamplePage.qml
+    controls/AdaptiveButton.qml
+    controls/AdaptiveCard.qml
+    examples/ButtonExample.qml
+    examples/NavigationBarExample.qml
+    examples/DualLayoutExample.qml
+    examples/DynamicCreationExample.qml
+    examples/RtlSupportExample.qml
+    examples/SelectiveLayoutExample.qml
+    examples/ControlsGalleryExample.qml
 )
 
 qt_add_qml_module(appProxyLayouts
@@ -37,6 +41,16 @@ set(ASSETS
     assets/sky4.jpg
     assets/sky5.jpg
     assets/sky6.jpg
+    assets/icons/cloud-bolt-svgrepo-com.svg
+    assets/icons/cloud-rain-alt-1-svgrepo-com.svg
+    assets/icons/cloud-rainbow-svgrepo-com.svg
+    assets/icons/cloud-sun-alt-svgrepo-com.svg
+    assets/icons/eclipse-svgrepo-com.svg
+    assets/icons/snow-alt-1-svgrepo-com.svg
+    assets/icons/sun-haze-svgrepo-com.svg
+    assets/icons/temperature-arrow-up-svgrepo-com.svg
+    assets/icons/umbrella-svgrepo-com.svg
+    assets/icons/arrow-circle-right-svgrepo-com.svg
 )
 
 qt_add_resources(appProxyLayouts "images"

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material 2.12
+import ProxyLayouts
 
 ExamplePage {
     id: root

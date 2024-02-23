@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import ProxyLayouts
 
 Window {
     id: root
@@ -12,6 +13,14 @@ Window {
         id: mainStack
         anchors.fill: parent
         initialItem: menuPageComponent
+
+        onCurrentItemChanged: {
+            if (mainStack.depth > 1) {
+                mainStack.currentItem.backButtonPressed?.connect(() => {
+                                                                     mainStack.pop()
+                                                                 })
+            }
+        }
     }
 
     Component {
@@ -31,6 +40,12 @@ Window {
                 case MenuPage.RtlExample:
                     mainStack.push(rtlExampleComponent)
                     break
+                case MenuPage.SelectiveLayoutExample:
+                    mainStack.push(selectiveExampleComponent)
+                    break
+                case MenuPage.ControlsGalleryExample:
+                    mainStack.push(controlsGalleryExampleComponent)
+                    break
                 case MenuPage.DualLayoutAntiExample:
                     mainStack.push(dualLayoutAntiExampleComponent)
                     break
@@ -42,50 +57,42 @@ Window {
     Component {
         id: buttonExampleComponent
 
-        ButtonExample {
-            onBackButtonPressed: {
-                mainStack.pop()
-            }
-        }
+        ButtonExample {}
     }
 
     Component {
         id: navigationExampleComponent
 
-        NavigationBarExample {
-            onBackButtonPressed: {
-                mainStack.pop()
-            }
-        }
+        NavigationBarExample {}
     }
 
     Component {
         id: dynamicCreationExampleComponent
 
-        DynamicCreationExample {
-            onBackButtonPressed: {
-                mainStack.pop()
-            }
-        }
+        DynamicCreationExample {}
     }
 
     Component {
         id: rtlExampleComponent
 
-        RtlSupportExample {
-            onBackButtonPressed: {
-                mainStack.pop()
-            }
-        }
+        RtlSupportExample {}
+    }
+
+    Component {
+        id: selectiveExampleComponent
+
+        SelectiveLayoutExample {}
+    }
+
+    Component {
+        id: controlsGalleryExampleComponent
+
+        ControlsGalleryExample {}
     }
 
     Component {
         id: dualLayoutAntiExampleComponent
 
-        DualLayoutExample {
-            onBackButtonPressed: {
-                mainStack.pop()
-            }
-        }
+        DualLayoutExample {}
     }
 }

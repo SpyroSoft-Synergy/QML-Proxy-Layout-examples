@@ -19,6 +19,8 @@ ExamplePage {
         NavigationExample,
         DynamicCreationExample,
         RtlExample,
+        SelectiveLayoutExample,
+        ControlsGalleryExample,
         DualLayoutAntiExample
     }
 
@@ -54,6 +56,16 @@ ExamplePage {
                 text: qsTr("RTL language support example")
                 isAntiExample: false
                 type: MenuPage.RtlExample
+            }
+            ListElement {
+                text: qsTr("Selective layout example")
+                isAntiExample: false
+                type: MenuPage.SelectiveLayoutExample
+            }
+            ListElement {
+                text: qsTr("Controls gallery - case study")
+                isAntiExample: false
+                type: MenuPage.ControlsGalleryExample
             }
             ListElement {
                 text: qsTr("ANTI EXAMPLE - Dual layout")
