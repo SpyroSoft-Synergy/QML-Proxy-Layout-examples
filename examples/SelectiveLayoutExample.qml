@@ -52,6 +52,18 @@ ExamplePage {
         Layout.fillWidth: true
         fillMode: Image.PreserveAspectCrop
         source: "qrc:/assets/sky1.jpg"
+
+        Text {
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+            font {
+                pixelSize: 40
+                bold: true
+            }
+            text: "1"
+        }
     }
     Image {
         id: image2
@@ -61,6 +73,18 @@ ExamplePage {
 
         fillMode: Image.PreserveAspectCrop
         source: "qrc:/assets/sky2.jpg"
+
+        Text {
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+            font {
+                pixelSize: 40
+                bold: true
+            }
+            text: "2"
+        }
     }
     Image {
         id: image3
@@ -70,5 +94,17 @@ ExamplePage {
 
         fillMode: Image.PreserveAspectCrop
         source: "qrc:/assets/sky3.jpg"
+
+        Text {
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+            font {
+                pixelSize: 40
+                bold: true
+            }
+            text: "3"
+        }
     }
 }

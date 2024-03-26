@@ -16,6 +16,8 @@ ExamplePage {
 
     enum Pages {
         ButtonExample,
+        ButtonExampleWithoutProxy1,
+        ButtonExampleWithoutProxy2,
         NavigationExample,
         DynamicCreationExample,
         RtlExample,
@@ -41,6 +43,16 @@ ExamplePage {
                 text: qsTr("Button example")
                 isAntiExample: false
                 type: MenuPage.ButtonExample
+            }
+            ListElement {
+                text: qsTr("Button example without proxy layout 1")
+                isAntiExample: false
+                type: MenuPage.ButtonExampleWithoutProxy1
+            }
+            ListElement {
+                text: qsTr("Button example without proxy layout 2")
+                isAntiExample: false
+                type: MenuPage.ButtonExampleWithoutProxy2
             }
             ListElement {
                 text: qsTr("Navigation example")

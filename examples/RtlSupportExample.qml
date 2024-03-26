@@ -119,31 +119,30 @@ ExamplePage {
             Layout.fillWidth: true
         }
 
-        Image {
-            id: image1
+        Repeater {
+            id: imageRepeater
+            model: ["qrc:/assets/sky1.jpg", "qrc:/assets/sky2.jpg", "qrc:/assets/sky3.jpg"]
 
-            Layout.fillHeight: true
-            Layout.maximumWidth: 100
-            fillMode: Image.PreserveAspectCrop
-            source: "qrc:/assets/sky1.jpg"
-        }
-        Image {
-            id: image2
+            delegate: Image {
+                id: image1
 
-            Layout.fillHeight: true
-            Layout.maximumWidth: 100
+                Layout.fillHeight: true
+                Layout.maximumWidth: 100
+                fillMode: Image.PreserveAspectCrop
+                source: modelData
 
-            fillMode: Image.PreserveAspectCrop
-            source: "qrc:/assets/sky2.jpg"
-        }
-        Image {
-            id: image3
-
-            Layout.fillHeight: true
-            Layout.maximumWidth: 100
-
-            fillMode: Image.PreserveAspectCrop
-            source: "qrc:/assets/sky3.jpg"
+                Text {
+                    anchors.fill: parent
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    color: "white"
+                    font {
+                        pixelSize: 30
+                        bold: true
+                    }
+                    text: index
+                }
+            }
         }
 
         Item {

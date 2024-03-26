@@ -26,6 +26,8 @@ set(QML_FILES
     examples/RtlSupportExample.qml
     examples/SelectiveLayoutExample.qml
     examples/ControlsGalleryExample.qml
+    examples/ButtonExampleWithoutProxy1.qml
+    examples/ButtonExampleWithoutProxy2.qml
 )
 
 qt_add_qml_module(appProxyLayouts

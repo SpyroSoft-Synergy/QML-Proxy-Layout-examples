@@ -31,6 +31,12 @@ Window {
                 case MenuPage.ButtonExample:
                     mainStack.push(buttonExampleComponent)
                     break
+                case MenuPage.ButtonExampleWithoutProxy1:
+                    mainStack.push(buttonExampleNoProxyComponent)
+                    break
+                case MenuPage.ButtonExampleWithoutProxy2:
+                    mainStack.push(buttonExampleNoProxyLoaderComponent)
+                    break
                 case MenuPage.NavigationExample:
                     mainStack.push(navigationExampleComponent)
                     break
@@ -58,6 +64,17 @@ Window {
         id: buttonExampleComponent
 
         ButtonExample {}
+    }
+
+    Component {
+        id: buttonExampleNoProxyComponent
+
+        ButtonExampleWithoutProxy1 {}
+    }
+    Component {
+        id: buttonExampleNoProxyLoaderComponent
+
+        ButtonExampleWithoutProxy2 {}
     }
 
     Component {
